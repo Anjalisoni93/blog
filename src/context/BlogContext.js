@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 
 const BlogContext = React.createContext();
 
 export const BlogProvider = ({ children }) => {
-  const BlogPosts = [
-    { title: 'Blog Post #1'},
-    { title: 'Blog Post #2'}
-  ];
+  const [blogPosts, setBlogPosts] = useState([]);
 
-  return <BlogContext.Provider value={BlogPosts}>
+  const addBlogPost = () => {
+    setBlogPosts([ ...blogPosts, { title: `Blog Post #${blogPosts.length + 1}` }]);
+  };
+
+  return <BlogContext.Provider value={{ data: blogPosts, addBlogPost }}>
     {/* So children in this case is 
     essentially an App component that 
     we are passing down as a prop */}

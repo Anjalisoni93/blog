@@ -19,8 +19,14 @@ const blogReducer = (state, action) => {
 };
 
 const addBlogPost = (dispatch) => {
-  return (title, content) => {
-    dispatch({ type: 'add_blogpost', payload: { title, content } });
+  return async (title, content, callback) => {
+    try {
+      await axios.post('kjsdbckj', title, content);
+      dispatch({ type: 'add_blogpost', payload: { title, content } });
+      callback();
+    } catch (e) {
+      
+    }
   };
 };
 

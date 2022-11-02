@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { View, Text, TextInput, StyleSheet } from "react-native";
+import { View, Text, TextInput, StyleSheet, Button } from "react-native";
 
 const CreateScreen = ({ navigation }) => {
   const [title, setTitle] = useState('');
@@ -19,6 +19,7 @@ const CreateScreen = ({ navigation }) => {
         value={content}
         onChangeText={(text) => setContent(text)}
       />
+      <Button title="Add Blog Post" />
     </View>
   )
 };

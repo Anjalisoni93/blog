@@ -7,13 +7,15 @@ const CreateScreen = ({ navigation }) => {
 
   return (
     <View>
-      <Text>Enter Title:</Text>
+      <Text style={styles.label}>Enter Title:</Text>
       <TextInput
+        style={styles.input}
         value={title}
         onChangeText={(text) => setTitle(text)}
       />
-      <Text>Enter Content:</Text>
-      <TextInput 
+      <Text style={styles.label}>Enter Content:</Text>
+      <TextInput
+        style={styles.input}
         value={content}
         onChangeText={(text) => setContent(text)}
       />
@@ -21,6 +23,16 @@ const CreateScreen = ({ navigation }) => {
   )
 };
 
-const style = StyleSheet.create({});
+const styles = StyleSheet.create({
+  input: {
+    fontSize: 18,
+    borderWidth: 1,
+    borderColor: 'black'
+  },
+  label: {
+    fontSize: 20,
+    marginBottom: 10
+  }
+});
 
 export default CreateScreen;

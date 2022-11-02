@@ -5,7 +5,7 @@ import { Context } from "../context/BlogContext";
 const CreateScreen = ({ navigation }) => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const { addBlogPOst } = useContext(Context);
+  const { addBlogPost } = useContext(Context);
 
   return (
     <View>
@@ -23,7 +23,7 @@ const CreateScreen = ({ navigation }) => {
       />
       <Button
         title="Add Blog Post"
-        onPress={() => addBlogPOst(title, content)}
+        onPress={() => addBlogPost(title, content)}
       />
     </View>
   )

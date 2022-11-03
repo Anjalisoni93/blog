@@ -16,7 +16,7 @@ const ShowScreen = ({ navigation }) => {
   )
 };
 
-ShowScreen.navigationOptions = () => {
+ShowScreen.navigationOptions = ({ navigation }) => {
   return {
     headerRight: () => (
       <TouchableOpacity onPress={() => navigation.navigate('Edit')}>

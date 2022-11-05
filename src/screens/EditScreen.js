@@ -9,7 +9,8 @@ const EditScreen = ({ navigation }) => {
     blogPost => blogPost.id === navigation.getParam('id')
     );
 
-    const [title, setTitle] = useState();
+    const [title, setTitle] = useState(blogPost.title);
+    const [content, setContent] = useState(blogPost.content);
 
   return (
     <View>

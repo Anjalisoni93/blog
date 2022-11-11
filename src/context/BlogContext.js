@@ -37,7 +37,8 @@ const addBlogPost = (dispatch) => {
 };
 
 const deleteBlogPost = dispatch => {
-  return (id) => {
+  return async (id) => {
+    await jsonServer.delete(`/blogposts/${id}`);
     // type is 'thing to do' and payload is 'id of post to delete'
     dispatch({ type: 'delete_blogpost', payload: id })
   };
